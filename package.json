@@ -3,11 +3,12 @@
   "productName": "Acrobat X",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "main": "electron/main.mjs",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "dev": "concurrently \"npm run dev:web\" \"npm run dev:electron\"",
+    "dev:web": "next dev",
+    "dev:electron": "wait-on http://localhost:3000 && electron ."
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
