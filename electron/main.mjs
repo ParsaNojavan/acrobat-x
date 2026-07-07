@@ -17,7 +17,11 @@ function createWindow() {
     width: 1400,
     height: 900,
     titleBarStyle: "hidden",
-    titleBarOverlay: false,
+    titleBarOverlay: {
+      color: '#18181B',
+      symbolColor: 'white',
+      height: 35 
+    },
     webPreferences: {
       preload: preloadPath,
       contextIsolation: true,
