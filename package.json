@@ -7,8 +7,8 @@
   "main": "electron/main.mjs",
   "scripts": {
     "dev": "concurrently \"npm run dev:web\" \"npm run dev:electron\"",
-    "dev:web": "next dev",
-    "dev:electron": "wait-on http://localhost:3000 && electron ."
+    "dev:web": "next dev --webpack",
+    "dev:electron": "wait-on tcp:localhost:3000 && electron ."
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
